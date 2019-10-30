@@ -20,9 +20,6 @@
 <!-- 					HomeActionに実行の指令を送る。 -->
 						<s:submit value="商品購入"/>
 					</s:form>
-					<s:form action="AdminAction">
-						<s:submit value=" 管理者 "/>
-					</s:form>
 					<s:if test="#session.login_user_id != null">
 							<p>ログアウトする場合は
 									<a href='<s:url action="LogoutAction" />'>こちら</a></p>

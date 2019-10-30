@@ -33,6 +33,7 @@ public class LoginDAO {
 				if(rs.getString("login_id") != null){
 					loginDTO.setLoginFlg(true);
 				}
+				loginDTO.setAdminFlg(rs.getString("admin_flg"));
 			}
 		}catch(Exception e){
 			e.printStackTrace();

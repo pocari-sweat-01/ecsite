@@ -14,6 +14,7 @@ public class ItemCreateConfirmAction extends ActionSupport implements SessionAwa
 	private int itemStock;
 
 	public String execute(){
+		//入力された値を次の画面に渡すための処理。
 		String result = SUCCESS;
 		session.put("item_name",itemName);
 		session.put("item_price",itemPrice);
@@ -21,8 +22,6 @@ public class ItemCreateConfirmAction extends ActionSupport implements SessionAwa
 
 		return result;
 	}
-
-
 
 	public String getItemName(){
 		return itemName;
@@ -42,14 +41,11 @@ public class ItemCreateConfirmAction extends ActionSupport implements SessionAwa
 	public void setItemStock(int itemStock){
 		this.itemStock = itemStock;
 	}
-
 	public Map<String,Object>getSession(){
 		return this.session;
 	}
-
 	@Override
 	public void setSession(Map<String, Object> session) {
-		// TODO 自動生成されたメソッド・スタブ
 		this.session = session;
 	}
 }

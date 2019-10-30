@@ -13,8 +13,9 @@ public class HomeAction extends ActionSupport implements SessionAware{
 	private Map<String,Object>session;
 
 	public String execute(){
+		//未ログインなら、ログインページへ。ログインしていれば購入ページへ。
 				String result = "login";
-				if(session.containsKey("login_user_id")){//containsKey：指定したキーが存在するかどうか。
+				if(session.containsKey("login_user_id")){
 					BuyItemDAO buyItemDAO = new BuyItemDAO();
 					BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
 					session.put("id", buyItemDTO.getId());

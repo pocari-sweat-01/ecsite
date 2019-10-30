@@ -12,6 +12,7 @@ create table login_user_transaction(
 	login_id varchar(16) unique,
 	login_pass varchar(16),
 	user_name varchar(50),
+	admin_flg varchar(1),
 	insert_date datetime,
 	update_date datetime
 );
@@ -44,3 +45,4 @@ INSERT INTO item_info_transaction VALUES
 (1,"ノートbook",100,50,now(),now());
 
 INSERT INTO login_user_transaction(login_id,login_pass,user_name)VALUES("internous","internous01","test");
+INSERT INTO login_user_transaction(login_id, login_pass, user_name,admin_flg) VALUES("admin", "admin", "admin","1");

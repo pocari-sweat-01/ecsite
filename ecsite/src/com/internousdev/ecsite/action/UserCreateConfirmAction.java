@@ -17,6 +17,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 
 		String result = SUCCESS;
 
+		//項目が入力されているか判別。
 		if(!(loginUserId.equals(""))
 			&& !(loginPassword.equals(""))
 			&& !(userName.equals(""))){

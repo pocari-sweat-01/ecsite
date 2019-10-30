@@ -18,18 +18,16 @@ public class ItemListAction extends ActionSupport implements SessionAware{
 
 	public String execute() throws SQLException{
 		ItemListDAO itemListDAO = new ItemListDAO();
+		//商品一覧を表示する為の準備。
 		itemInfoDTOList = itemListDAO.getItemList();
-
 		session.put("ListDelete", itemInfoDTOList);
-
+		//empty対策。
 		if(!(itemInfoDTOList.size() > 0)){
 			itemInfoDTOList = null;
 		}
 		String result = SUCCESS;
 		return result;
 	}
-
-
 
 	public List<ItemListDTO> getItemInfoDTOList() {
 		return itemInfoDTOList;
@@ -39,14 +37,9 @@ public class ItemListAction extends ActionSupport implements SessionAware{
 	}
 	@Override
 	public void setSession(Map<String, Object> session) {
-		// TODO 自動生成されたメソッド・スタブ
 		this.session = session;
 	}
 	public Map<String,Object>getSession(){
 		return session;
 	}
-
-
-
-
 }

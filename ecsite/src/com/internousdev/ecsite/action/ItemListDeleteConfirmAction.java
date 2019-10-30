@@ -13,24 +13,21 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemListDeleteConfirmAction extends ActionSupport implements SessionAware{
 
-
 	private List<ItemListDTO>itemInfoDTOList = new ArrayList<ItemListDTO>();
 	private Map<String,Object>session;
 
 	public String execute() throws SQLException{
 		ItemListDAO itemListDAO = new ItemListDAO();
+		//削除項目を全て表示する為の準備。
 		itemInfoDTOList = itemListDAO.getItemList();
-
 		session.put("ListDelete", itemInfoDTOList);
-
+		//empty対策。
 		if(!(itemInfoDTOList.size() > 0)){
 			itemInfoDTOList = null;
 		}
 		String result = SUCCESS;
 		return result;
 	}
-
-
 
 	public List<ItemListDTO> getItemInfoDTOList() {
 		return itemInfoDTOList;
@@ -40,12 +37,9 @@ public class ItemListDeleteConfirmAction extends ActionSupport implements Sessio
 	}
 	@Override
 	public void setSession(Map<String, Object> session) {
-		// TODO 自動生成されたメソッド・スタブ
 		this.session = session;
 	}
 	public Map<String,Object>getSession(){
 		return session;
 	}
-
-
 }

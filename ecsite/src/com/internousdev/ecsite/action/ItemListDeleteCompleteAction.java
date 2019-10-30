@@ -7,12 +7,11 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemListDeleteCompleteAction extends ActionSupport {
 
-
 	private String message;
 
 	public String execute() throws SQLException{
 		String result = ERROR;
-
+		//商品の全削除。
 		ItemDeleteDAO itemDeleteDAO = new ItemDeleteDAO();
 		int res = itemDeleteDAO.itemAllDelete();
 
@@ -25,13 +24,10 @@ public class ItemListDeleteCompleteAction extends ActionSupport {
 		return result;
 	}
 
-
 	public String getMessage(){
 		return this.message;
 	}
 	public void setMessage(String message){
 		this.message = message;
 	}
-
-
 }

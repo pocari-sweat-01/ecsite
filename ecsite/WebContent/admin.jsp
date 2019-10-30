@@ -23,6 +23,10 @@
 					<s:form id="itiran_buttam" action="ItemListAction">
 						<s:submit value="　一覧　"/>
 					</s:form>
+										<s:if test="#session.login_user_id != null">
+							<p>ログアウトする場合は
+									<a href='<s:url action="LogoutAction" />'>こちら</a></p>
+					</s:if>
 				</div>
 			</div>
 			<div id="footer">

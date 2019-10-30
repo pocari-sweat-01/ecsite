@@ -13,6 +13,7 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	private BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
 
 	public String execute() throws SQLException{
+		//購入する商品のデータを購入履歴に登録
 		buyItemCompleteDAO.buyItemInfo(
 				session.get("id").toString(),
 				session.get("total_price").toString(),
